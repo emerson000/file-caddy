@@ -38,7 +38,8 @@ def get_file(file, filetype, parent=None):
             path = file
         else:
             path = os.path.join(parent, file)
-        new_file.set_size(os.path.getsize(path))
+        if os.path.exists(path):
+            new_file.set_size(os.path.getsize(path))
 
     return new_file
 
