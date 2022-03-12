@@ -1,0 +1,46 @@
+
+$primaryTextColor: #000000;
+$primaryLinkColor: #1a21a5;
+
+#app-body {
+  padding: 0;
+  margin: 0;
+  font-size: 1.3rem;
+  height: 95vh;
+}
+
+a, a:visited {
+  color: $primaryLinkColor;
+  text-decoration: none;
+  user-select: none;
+  &:hover {
+    color: lighten($primaryLinkColor, 30%);
+  }
+}
+
+ul {
+  height: 95%;
+  overflow: scroll;
+  list-style-type: none;
+  li.FOLDER {
+    user-select: none;
+    &::before {
+      content: '\01f4c1\20'
+    }
+    &:hover {
+      cursor: pointer;
+      font-weight: bold;
+      &::before {
+        content: '\01f4c2\20'
+      }
+    }
+  }
+  li.FILE {
+    &::before {
+      content: '\01f4c4\20'
+    }
+  }
+  li {
+    padding: 0.2rem 0 0.2rem 0;
+  }
+}
